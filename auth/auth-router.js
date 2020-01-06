@@ -26,11 +26,10 @@ router.post("/login", (req, res) => {
     .first()
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
-        // res.status(200).json({ message: `Welcome ${user.username}` });
         req.session.user = user;
         res
           .status(200)
-          .json({ message: `Welcome ${user.username}, its cookie time!` });
+          .json({ message: `Welcome ${user.username}` });
       } else {
         res.status(401).json({ message: "You shall not pass" });
       }
