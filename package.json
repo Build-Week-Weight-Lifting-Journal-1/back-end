@@ -5,8 +5,7 @@
   "scripts": {
     "test": "cross-env DB_ENV=testing jest --watchAll",
     "server": "nodemon index.js",
-    "start":"node index.js"
-
+    "start": "node index.js"
   },
   "repository": "https://github.com/Build-Week-Weight-Lifting-Journal-1/back-end.git",
   "jest": {
@@ -26,6 +25,7 @@
     "knex": "^0.20.4",
     "nodejs": "^0.0.0",
     "nodemon": "^2.0.2",
+    "pg": "^7.17.0",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
