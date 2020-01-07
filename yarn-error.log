@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add connect-session-k
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js build
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\josep\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\josep\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\josep\AppData\Local\Programs\Python\Python36-32;C:\Users\josep\AppData\Local\Microsoft\WindowsApps;C:\Users\josep\AppData\Local\GitHubDesktop\bin;C:\Users\josep\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\josep\AppData\Roaming\npm;C:\Users\josep\AppData\Local\Yarn\bin
@@ -14,17 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/connect-session-k: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:60182:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:120166:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:121138:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:121060:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
+  SyntaxError: C:\Users\josep\OneDrive\Documents\GitHub\back-end\package.json: Unexpected token } in JSON at position 279
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1136:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
+      at <anonymous>
 
 npm manifest: 
   {
@@ -33,7 +29,9 @@ npm manifest:
     "main": "index.js",
     "scripts": {
       "test": "cross-env DB_ENV=testing jest --watchAll",
-      "server": "nodemon index.js"
+      "server": "nodemon index.js",
+      "start":"node index.js",
+      "build": "concurrently \"cd client && npm run build\" \"npm build \"",
     },
     "repository": "https://github.com/Build-Week-Weight-Lifting-Journal-1/back-end.git",
     "jest": {
@@ -44,6 +42,7 @@ npm manifest:
     "dependencies": {
       "axios": "^0.19.0",
       "bcryptjs": "^2.4.3",
+      "connect-session-knex": "^1.5.0",
       "cors": "^2.8.5",
       "express": "^4.17.1",
       "express-session": "^1.17.0",
@@ -477,6 +476,11 @@ Lockfile:
       unique-string "^1.0.0"
       write-file-atomic "^2.0.0"
       xdg-basedir "^3.0.0"
+  
+  connect-session-knex@^1.5.0:
+    version "1.5.0"
+    resolved "https://registry.yarnpkg.com/connect-session-knex/-/connect-session-knex-1.5.0.tgz#78ff3d1df6c4e5b0e74d4f8ccf503926272958aa"
+    integrity sha512-hJsb489Aau9PVauVHJpO3O4yP3xykGyh/HqmTPGpWEE44qVvjW91fFOd85iRsjGIyLIvodZb671y/kiCxhpPTg==
   
   console-control-strings@^1.0.0, console-control-strings@~1.1.0:
     version "1.1.0"
