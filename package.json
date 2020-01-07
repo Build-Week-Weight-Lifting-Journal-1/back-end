@@ -5,7 +5,8 @@
   "scripts": {
     "test": "cross-env DB_ENV=testing jest --watchAll",
     "server": "nodemon index.js",
-    "start":"node index.js"
+    "start":"node index.js",
+    "build": "concurrently \"cd client && npm run build\" \"npm build \"",
   },
   "repository": "https://github.com/Build-Week-Weight-Lifting-Journal-1/back-end.git",
   "jest": {
