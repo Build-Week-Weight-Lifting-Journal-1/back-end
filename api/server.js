@@ -36,5 +36,7 @@ server.use(session(sessionOptions));
 
 
 server.use("/api", apiRouter);
-
+server.get("/", (req, res) => {
+  res.send("<h1>Hi from heroku<h1>")
+})
 module.exports = server;
