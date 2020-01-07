@@ -9,7 +9,7 @@ const knexSessionStore = require("connect-session-knex")(session);
 
 const sessionOptions = {
   name: "Conan", 
-  secret: "keep it  a secret",
+  secret: "keep it secret",
   cookie: {
     maxAge: 1000 * 60 * 60,
     secure: false, 
