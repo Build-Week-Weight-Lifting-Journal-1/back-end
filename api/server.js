@@ -17,6 +17,7 @@ const sessionOptions = {
   },
   resave: false, 
   saveUninitialized: false, 
+  
 
   store: new knexSessionStore({
     knex: require("../database/dbConfig"),
