@@ -1,13 +1,13 @@
 // Update with your config settings.
-require('dotenv').config()
+
+require("dotenv").config();
 
 module.exports = {
-
   development: {
-    client: 'sqlite3',
-    useNullAsDefault:true,
+    client: "sqlite3",
+    useNullAsDefault: true,
     connection: {
-      filename: './dev.sqlite3'
+      filename: "./dev.sqlite3"
     }
   },
 
@@ -28,23 +28,22 @@ module.exports = {
   // },
 
   production: {
-    client: 'pg',
+    client: "pg",
     connection: {
-      database: process.env.DATABASE_URL, 
+      database: process.env.DATABASE_URL
     },
     pool: {
       min: 2,
       max: 100
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: "knex_migrations"
     },
     migrations: {
-      directory: './migrations'
+      directory: "./migrations"
     },
     seeds: {
-      directory: './seeds'
+      directory: "./seeds"
     }
   }
-
 };
