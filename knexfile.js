@@ -8,6 +8,15 @@ module.exports = {
     useNullAsDefault: true,
     connection: {
       filename: "./database/dev.sqlite3"
+    },
+    migrations: {
+      tableName: "knex_migrations"
+    },
+    migrations: {
+      directory: "./database/migrations"
+    },
+    seeds: {
+      directory: "./database/seeds"
     }
   },
 

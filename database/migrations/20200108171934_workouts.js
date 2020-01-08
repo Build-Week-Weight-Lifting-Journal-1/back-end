@@ -1,5 +1,5 @@
 exports.up = function(knex) {
-    return knex.schema.createTable('exercises', tbl => {
+    return knex.schema.createTable('workouts', tbl => {
       tbl.increments();
   
       tbl.string('date', 128).notNullable();
@@ -20,5 +20,5 @@ exports.up = function(knex) {
   };
   
   exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('exercise');
+    return knex.schema.dropTableIfExists('workouts');
   };
