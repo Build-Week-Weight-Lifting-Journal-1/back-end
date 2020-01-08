@@ -7,7 +7,7 @@ module.exports = {
     client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: "./dev.sqlite3"
+      filename: "./database/dev.sqlite3"
     }
   },
 
@@ -40,10 +40,10 @@ module.exports = {
       tableName: "knex_migrations"
     },
     migrations: {
-      directory: "./migrations"
+      directory: "./database/migrations"
     },
     seeds: {
-      directory: "./seeds"
+      directory: "./database/seeds"
     }
   }
 };
