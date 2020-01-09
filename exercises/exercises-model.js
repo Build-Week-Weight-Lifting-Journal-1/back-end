@@ -1,40 +1,40 @@
-// const db = require("../database/dbConfig.js");
+const db = require("../database/dbConfig.js");
 
-// module.exports = {
-//   find,
-//   findById,
-//   add,
-//   update,
-//   remove
-// }
+module.exports = {
+  find,
+  findById,
+  add,
+  update,
+  remove
+}
 
-// function find() {
-//   return db('restaurants')
-//     .select('id', 'exercise', 'muscle', 'sets', 'reps', 'weight', 'notes', 'date')
-//     .orderBy('id')
-// }
+function find() {
+  return db('restaurants')
+    .select('id', 'exercise', 'muscle', 'sets', 'reps', 'weight', 'notes', 'date')
+    .orderBy('id')
+}
 
-// function findById(id) {
-//   return db('restaurants')
-//     .where({id})
-//     .first()
-// }
+function findById(id) {
+  return db('exercises')
+    .where({id})
+    .first()
+}
 
-// async function add(exercise) {
-//   const [id] = await db('exercise').insert(exercise, 'id')
+async function add(exercise) {
+  const [id] = await db('exercise').insert(exercise, 'id')
 
-//   return findById(id)
-// }
+  return findById(id)
+}
 
-// function update(id, changes) {
-//   return db('restaurants')
-//     .where('id', id)
-//     .update(changes)
-//     .then(() => {
-//       return findById(id);
-//     })
-// }
+function update(id, changes) {
+  return db('restaurants')
+    .where('id', id)
+    .update(changes)
+    .then(() => {
+      return findById(id);
+    })
+}
 
-// function remove(id) {
-//   return db('restaurants').where('id', id).del()
-// }
+function remove(id) {
+  return db('restaurants').where('id', id).del()
+}
