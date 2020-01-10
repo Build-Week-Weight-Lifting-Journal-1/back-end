@@ -5,29 +5,36 @@ module.exports = {
   findById,
   add,
   update,
+  findByDate,
   remove
 }
 
 function find() {
-  return db('restaurants')
+  return db('workouts')
     .select('id', 'exercise', 'muscle', 'sets', 'reps', 'weight', 'notes', 'date')
     .orderBy('id')
 }
 
 function findById(id) {
-  return db('exercises')
+  return db('workouts')
     .where({id})
     .first()
 }
 
-async function add(exercise) {
-  const [id] = await db('exercise').insert(exercise, 'id')
+function findByDate(date) {
+  return db('workouts')
+    .where({date})
+    .first()
+}
+
+async function add(workout) {
+  const [id] = await db('workouts').insert(workout, 'id')
 
   return findById(id)
 }
 
 function update(id, changes) {
-  return db('restaurants')
+  return db('workouts')
     .where('id', id)
     .update(changes)
     .then(() => {
@@ -36,5 +43,5 @@ function update(id, changes) {
 }
 
 function remove(id) {
-  return db('restaurants').where('id', id).del()
+  return db('workouts').where({id}).del()
 }
